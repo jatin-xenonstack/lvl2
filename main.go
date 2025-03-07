@@ -21,6 +21,8 @@ func main() {
 	router.DELETE("/del", handlers.Del)
 	router.POST("/auth/signup", handlers.CreateUser)
 	router.POST("/auth/login", handlers.Login)
+	router.GET("/book/:search", middlewares.CheckAuth(), handlers.SearchBook)
+	router.GET("/book/all", middlewares.CheckAuth(), handlers.GetAllBook)
 	router.GET("/user/profile", middlewares.CheckAuth(), handlers.GetUserProfile)
 	router.POST("/owner/create-library", middlewares.CheckAuth(), handlers.CreateLibrary)
 	router.POST("/owner/assign-admin", middlewares.CheckAuth(), handlers.AssignAdmin)

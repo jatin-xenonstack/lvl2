@@ -37,7 +37,7 @@ func InsertBook(c *gin.Context) {
 			LibraryId:       library.LibraryId,
 			Title:           inputBook.Title,
 			Author:          inputBook.Author,
-			Publisher:       inputBook.Author,
+			Publisher:       inputBook.Publisher,
 			Version:         inputBook.Version,
 			TotalCopies:     inputBook.TotalCopies,
 			AvailableCopies: inputBook.TotalCopies,
