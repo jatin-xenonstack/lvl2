@@ -22,8 +22,14 @@ func main() {
 	router.POST("/auth/signup", handlers.CreateUser)
 	router.POST("/auth/login", handlers.Login)
 	router.GET("/user/profile", middlewares.CheckAuth(), handlers.GetUserProfile)
-	router.POST("/user/create-library", middlewares.CheckAuth(), handlers.CreateLibrary)
-	router.POST("/user/assign-admin", middlewares.CheckAuth(), handlers.AssignAdmin)
+	router.POST("/owner/create-library", middlewares.CheckAuth(), handlers.CreateLibrary)
+	router.POST("/owner/assign-admin", middlewares.CheckAuth(), handlers.AssignAdmin)
+	router.POST("/user/register", middlewares.CheckAuth(), handlers.Register)
+	router.POST("/admin/insert-book", middlewares.CheckAuth(), handlers.InsertBook)
+	router.POST("/admin/update-book", middlewares.CheckAuth(), handlers.UpadateBookCopies)
+	router.POST("/user/request", middlewares.CheckAuth(), handlers.RequestEvent)
+	router.GET("/admin/see-request", middlewares.CheckAuth(), handlers.SeeRequest)
+	router.POST("/admin/handle-request", middlewares.CheckAuth(), handlers.HandleRequest)
 
 	router.Run("localhost:8000")
 }

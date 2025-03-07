@@ -22,7 +22,7 @@ func InitDB() {
 		log.Fatal("Failed to connect to database:", err)
 	}
 	//	DB = db
-	DB.AutoMigrate(&models.User{}, &models.Library{}, &models.LibraryUser{})
+	DB.AutoMigrate(&models.User{}, &models.Library{}, &models.LibraryUser{}, &models.BookInventory{}, &models.RequestEvent{}, &models.IssueBook{})
 
 	fmt.Println("Connected!")
 	// defer db.Close()

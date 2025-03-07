@@ -46,3 +46,7 @@ type AuthLogin struct {
 type Admin struct {
 	ID uint `json:"id" binding:"required"`
 }
+
+type RegisterLibrary struct {
+	Name string `json:"name" binding:"required"`
+}
